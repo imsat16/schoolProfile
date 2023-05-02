@@ -15,25 +15,25 @@ const Layouts = ({
             canonical="https://www.imsat.my.id/"
             openGraph={{
             url: 'https://www.imsat.my.id/',
-            title: title,
-            description: description,
+            title: {title},
+            description: {description},
             images: [
                 {
-                    url: image,
+                    url: {image},
                     width: 800,
                     height: 600,
                     alt: title,
                     type: 'image/jpeg',
                 },
                 {
-                    url: image,
+                    url: {image},
                     width: 900,
                     height: 800,
                     alt: title,
                     type: 'image/jpeg',
                 },
-                { url: image },
-                { url: image },
+                { url: {image} },
+                { url: {image} },
             ],
             siteName: 'imsat.my.id',
             }}

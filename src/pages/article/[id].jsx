@@ -17,8 +17,6 @@ export default function Home() {
     //   }
     }, [id])
 
-    console.log(data)
-
     
   return (
     <Layouts 
