@@ -15,8 +15,8 @@ const Layouts = ({
             canonical="https://www.imsat.my.id/"
             openGraph={{
             url: 'https://www.imsat.my.id/',
-            title: 'Open Graph Title',
-            description: 'Open Graph Description',
+            title: title,
+            description: description,
             images: [
                 {
                     url: image,
