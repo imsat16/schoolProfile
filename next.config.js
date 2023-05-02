@@ -3,4 +3,12 @@ const nextConfig = {
   reactStrictMode: true,
 }
 
-module.exports = nextConfig
+module.exports = {
+  nextConfig,
+  env:{
+    baseURL:'https://fakestoreapi.com'
+  },
+  images: {
+    domains: ['fakestoreapi.com'],
+  },
+}
