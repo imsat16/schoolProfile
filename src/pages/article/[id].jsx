@@ -1,5 +1,5 @@
 import Layouts from "@/layouts";
-import * as API from "API/api"
+import * as API from "@/pages/api/api"
 import * as React from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";

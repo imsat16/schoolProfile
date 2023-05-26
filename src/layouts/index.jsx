@@ -1,14 +1,18 @@
 import { NextSeo } from 'next-seo'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
+import Sidebar from '../components/organism/Sidebar'
 
 const Layouts = ({
     title, 
     description, 
     children,
-    image
+    image,
+    className,
+    navbar,
+    sidebar
     }) => {
   return (
-    <>
+    <main className={`${className}`}>
         <NextSeo
             title={title}
             description={description}
@@ -43,8 +47,10 @@ const Layouts = ({
                 cardType: 'summary_large_image',
             }}
         />
-        {children}
-    </>
+        <section>
+            {children}
+        </section>
+    </main>
   )
 }
 
