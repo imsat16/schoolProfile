@@ -1,7 +1,7 @@
-import Button from '@/components/atoms/Button'
+// import Button from '@/components/atoms/Button'
 import React from 'react'
 import { Card, Title, AreaChart, DonutChart } from "@tremor/react";
-import DashboardLayouts from '@/layouts/dashboard';
+import DashboardLayouts from '../../layouts/dashboard';
 
 const chartdata = [
     {

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Sidebar from '@/components/organism/sidebar';
+import Sidebar from '../../components/organism/sidebar';
 import {HiOutlineMenuAlt2} from 'react-icons/hi'
-import Navbar from '@/components/organism/Navbar';
+import Navbar from '../../components/organism/Navbar';
 
 const DashboardLayouts = ({
     children,

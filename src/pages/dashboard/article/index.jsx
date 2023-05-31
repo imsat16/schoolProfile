@@ -1,4 +1,4 @@
-import DashboardLayouts from '@/layouts/dashboard'
+import DashboardLayouts from '../../../layouts/dashboard'
 import React from 'react'
 
 const DashboardArticle = () => {
