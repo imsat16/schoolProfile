@@ -1,0 +1,27 @@
+.btn {
+    @apply border-0;
+}
+
+.btn p .active{
+    @apply text-[#fff]
+}
+
+.btn:hover p{
+    @apply text-white;
+}
+
+.btn:hover div{
+    @apply text-[#1D9BF0];
+}
+
+.btn div{
+    @apply transition-all ease-in-out duration-300
+}
+
+.btn:hover .btn-square {
+    @apply text-white;
+}
+
+/* .btn div:hover{
+    @apply text-[#fff];
+} */

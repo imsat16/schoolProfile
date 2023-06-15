@@ -1,8 +1,0 @@
-{
-  "compilerOptions": {
-    "paths": {
-      "@/*": ["./src/*"],
-      "API/*": ["./src/pages/api/*"]
-    }
-  }
-}

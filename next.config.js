@@ -1,14 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  images: {
+    remotePatterns : [
+        {
+            protocol: 'https',
+            hostname: 'www.smkmvp.sch.id',
+            port: ''
+        }
+    ]
+}
 }
 
-module.exports = {
-  nextConfig,
-  env:{
-    baseURL:'https://fakestoreapi.com'
-  },
-  images: {
-    domains: ['fakestoreapi.com'],
-  },
-}
+module.exports = nextConfig
