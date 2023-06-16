@@ -1,12 +1,14 @@
 [
     {
         "id": 1,
+        "author":"Imam",
         "image":"https://www.smkmvp.sch.id/public/bkk-pictures/FDOZF65a3zkt7QUC0BogGXIYbONJhirvQaLKO5Qf.jpg",
         "judul": "ada anak bertanya pada anaknya",
         "content": "Lorem ipsum **dolor** sit amet \n consectetur adipisicing elit. Accusantium praesentium laboriosam magnam vitae modi, <br/> dolorem odio quidem repellendus sed voluptas cumque provident quaerat ipsa. Provident ex consequatur minima reiciendis asperiores."
     },
     {
         "id": 2,
+        "author":"Satrio",
         "image":"https://www.smkmvp.sch.id/public/elearning-pictures/VH4w4fSBDo0fSSAhvn9C5fyUUjwLhdKkPvgmssbm.jpg",
         "judul": "ada bapa menjawab pada bapaknya",
         "content": "Lorem ipsum **dolor** sit amet consectetur adipisicing elit. Accusantium praesentium laboriosam magnam vitae modi, <br/> dolorem odio quidem repellendus sed voluptas cumque provident quaerat ipsa. Provident ex consequatur minima reiciendis asperiores."

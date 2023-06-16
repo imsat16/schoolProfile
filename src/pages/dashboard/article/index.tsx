@@ -12,7 +12,7 @@ const ArticleDashboard = () => {
   const [data,setData]:any = useState<any[]>([])
   const [layout, setLayout] = useState(false)
   useEffect(()=>{
-    axios.get("/dummy.json")
+    axios.get("/dummydata/dummy.json")
     .then(res=>{
       setData(res.data)
       console.log(res.data)

@@ -10,11 +10,19 @@ export default function Home() {
   const [jurusan, setJurusan]:any = React.useState([])
   const [showAll, setShowAll] = React.useState(false);
   const limitedJurusan = showAll ? jurusan : jurusan.slice(0, 3);
+  const [data, setData]=React.useState([])
   React.useEffect(() => {
-    axios.get("/jurusan.json")
+    axios.get("/dummydata/jurusan.json")
     .then(
       res=>{
         setJurusan(res.data)
+        console.log(res.data)
+      }
+    )
+    axios.get("/dummydata/dummy.json")
+    .then(
+      res=>{
+        setData(res.data)
         console.log(res.data)
       }
     )
@@ -26,7 +34,9 @@ export default function Home() {
         <title>SMK MVP ARS</title>
         <meta name="description" content="SMK MVP ARS Internasional adalah salah satu sekolah yang mempunyai makna Sekolah Menengah Kejuruan Multi Vocational Platform. Sekolah ini telah berdiri sejak tahun 2009 di bawah naungan Yayasan Graha Bina Pendidikan Internasional dan beralamat di Jalan Sekolah Internasional No. 1-6 Bandung. Sekolah ini memiliki program GO DIGITAL ! yang mana sekolah ini akan berkembang menjadi sekolah digital dengan mengembangkan slogan B.E.R.A.N.I walaupun Sekolah sudah memiliki Sistem informasi teknologi sebelumnya terbukti dengan adanya pembelajaran secara online. Selain itu sekolah ini juga menawarkan berbagai kompetensi keahlian atau jurusan bagi peserta didiknya." />
         <link href="/favicon.png" rel="icon" type="image/png"></link>
-        <meta property="og:image" content="Link preview image URL"></meta>
+        <meta property= "og:image" content = "ogimg.png"></meta>
+        <meta property="og:type" content="website" />
+        <meta property="og:description" content="SMK MVP ARS Internasional adalah salah satu sekolah yang mempunyai makna Sekolah Menengah Kejuruan Multi Vocational Platform. Sekolah ini telah berdiri sejak tahun 2009 di bawah naungan Yayasan Graha Bina Pendidikan Internasional dan beralamat di Jalan Sekolah Internasional No. 1-6 Bandung. Sekolah ini memiliki program GO DIGITAL ! yang mana sekolah ini akan berkembang menjadi sekolah digital dengan mengembangkan slogan B.E.R.A.N.I walaupun Sekolah sudah memiliki Sistem informasi teknologi sebelumnya terbukti dengan adanya pembelajaran secara online. Selain itu sekolah ini juga menawarkan berbagai kompetensi keahlian atau jurusan bagi peserta didiknya." />
       </Head>
       <CR.Carousel showThumbs={false} autoPlay stopOnHover infiniteLoop interval={3000}>
         <div>
@@ -83,10 +93,19 @@ export default function Home() {
           <div className="grid w-full gap-6">
             <h2 className="text-center text-yellow-600">Aktivitas</h2>
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-              <ArticleCard/>
-              <ArticleCard/>
-              <ArticleCard/>
-              <ArticleCard/>
+              {data?.map((ctx:any, idx:any)=>{
+                return(
+                  <ArticleCard 
+                    key={idx}
+                    title={ctx.title}
+                    author={ctx.author}
+                    date='16 January 2003'
+                    desc={ctx.content}
+                    href=''
+                    image={ctx.image}
+                  />
+                )
+              })}
             </div>
           </div>
         </div>
