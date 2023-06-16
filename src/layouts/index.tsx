@@ -8,20 +8,20 @@ interface Props {
 const Layout:React.FC<Props> = ({children}) => {
   return (
     <main>
-      <Navbar show sidebar>
+      <Navbar withLogo='/footer.png' show={false} sidebar>
         <Button href={'/'}>Home</Button>
         <Button href={'/article'}>Article</Button>
         <Button href={'/ppdb'}>Pendaftaran</Button>
         <Button href={'/contact'}>Contact</Button>
       </Navbar>
-      <section className="absolute top-20 -z-10">
+      <section className="static -z-10">
         {children}
       </section>
-      <footer className="bg-gray-200 py-4">
-   <div className="container mx-auto grid md:grid-cols-4 gap-4">
+      <footer className="py-4 bg-gray-200">
+   <div className="container grid gap-4 mx-auto md:grid-cols-4">
       <div className="flex flex-col items-center p-4 mb-5">
          <img src="/footer.png" alt="Footer Logo" />
-         <p className="text-xs mt-5 text-center font-bold">
+         <p className="mt-5 text-xs font-bold text-center">
             Brilliant Entrepreneur Religious Active Nationality Integrity
          </p>
          <div className="flex gap-4 mt-5">
@@ -43,7 +43,7 @@ const Layout:React.FC<Props> = ({children}) => {
          </div>
       </div>
       <div className="flex flex-col p-4">
-         <h2 className="font-bold mb-5">About Us</h2>
+         <h2 className="mb-5 font-bold">About Us</h2>
          <ul>
             <li>Careers</li>
             <li>Company Profile</li>
@@ -52,7 +52,7 @@ const Layout:React.FC<Props> = ({children}) => {
          </ul>
       </div>
       <div className="flex flex-col p-4">
-         <h2 className="font-bold mb-5">Vocation</h2>
+         <h2 className="mb-5 font-bold">Vocation</h2>
          <ul>
             <li>Teknik Komputer Jaringan</li>
             <li>Rekayasa Perangkat Lunak</li>
@@ -65,7 +65,7 @@ const Layout:React.FC<Props> = ({children}) => {
          </ul>
       </div>
       <div className="flex flex-col p-4">
-         <h2 className="font-bold  mb-5">Address</h2>
+         <h2 className="mb-5 font-bold">Address</h2>
          <ul>
             <li>Jalan Sekolah International No 1-6</li>
             <li>No 1-6 Bandung</li>
@@ -84,8 +84,8 @@ const Layout:React.FC<Props> = ({children}) => {
          </ul>
       </div>
    </div>
-   <div className="text-center mt-10">
-      <p className="text-gray-600 text-sm">
+   <div className="mt-10 text-center">
+      <p className="text-sm text-gray-600">
          &copy; {new Date().getFullYear()} Your Company. All rights reserved.
       </p>
    </div>

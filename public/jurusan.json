@@ -1,0 +1,58 @@
+[
+    {
+        "id":1,
+        "title":"Rekayasa Perangkat Lunak",
+        "slug":"rpl",
+        "image":"/rpl.jpg",
+        "desc":"RPL adalah singkatan dari Rekayasa Perangkat Lunak dan merupakan sebuah jurusan yang ada di Sekolah Menengah Kejuruan (SMK). RPL adalah sebuah jurusan yang mempelajari dan mendalami semua cara-cara pengembangan perangkat lunak termasuk pembuatan, pemeliharaan, manajemen organisasi pengembangan perangkat lunak dan manajemen kualitas."
+    },
+    {
+        "id":2,
+        "title":"Otomatisasi dan Tata Kelola Perkantoran",
+        "slug":"otkp",
+        "image":"/adm.jpg",
+        "desc":"Otomatisasi dan Tata Kelola Perkantoran adalah jurusan yang mempelajari tentang administrasi perusahaan, pengelolaan surat menyurat, hingga pengelolaan keuangan. Tugas Jurusan Administrasi Perkantoran diantaranya korespondensi, teknologi informasi, manajemen kearsipan, pengetahuan dan keterampilan dalam bidang korespondensi, manajemen kearsipan, mengetik dengan 10 jari manual dan elektrik, manajemen perkantoran, teknologi informasi (komputer), dan lain-lain."
+    },
+    {
+        "id":3,
+        "title":"Teknik Komputer Jaringan",
+        "slug":"tkj",
+        "image":"/tkj.jpg",
+        "desc":"TKJ adalah singkatan dari Teknik Komputer Jaringan. TKJ merupakan sebuah kejuruan yang mempelajari tentang cara merakit komputer, mengenal dan mempelajari komponen hardware apa saja yang ada di dalam komputer, merakit komputer serta fokus mempelajari jaringan dasar. Tidak hanya itu, selama tiga tahun belajar di TKJ, Anda akan belajar sistem kerja jaringan dan pemrograman web serta mengadministrasi komputer jaringan."
+    },
+    {
+        "id":4,
+        "title":"Perhotelan",
+        "slug":"ap",
+        "image":"/perhotelan.jpg",
+        "desc":"Program Keahlian Perhotelan merupakan suatu program yang menghasilkan tenaga ahli dalam bidang perhotelan yang terampil dan kompeten di bidang pelayanan dasar perhotelan khususnya pemenuhan kebutuhan dasar manusia. Dalam program keahlian ini meliputi konsentrasi keahlian perhotelan dan restoran."
+    },
+    {
+        "id":5,
+        "title":"Farmasi Klinis dan Komunitas",
+        "slug":"farmasi",
+        "image":"/farmasi.jpg",
+        "desc":"Pada dasarnya, SMK Farmasi merupakan gabungan antara ilmu kesehatan dan ilmu kimia. Selain ilmu mengenai kesehatan dan obat-obatan, kamu juga akan belajar tentang manajemen dan juga pemasaran untuk obat. Di jurusan ini kamu akan belajar mencampur, meracik, mengombinasi, menganalisis, atau menciptakan obat yang memenuhi standar kualitas dan kelayakan. Tak hanya meracik, kamu juga harus mengetahui bagaimana penggunaan obat-obatan tersebut secara aman."
+    },
+    {
+        "id":6,
+        "title":"Tata Boga",
+        "slug":"tataboga",
+        "image":"/tataboga.jpg",
+        "desc":"Program keahlian Tata Boga bertujuan menyiapkan lulusan yang memiliki pengetahuan dan ketrampilan yang baik dalam bidang kompetensi Restoran Servive, Kitchen Production, Pastry and Bakery serta Enterpreneur. Program Keahlian Tata Boga menyiapkan tenaga ahli menengah yang terampil dalam melayani makanan dan minuman di Restoran maupun Hotel, membuat produk makanan dan minuman, dan produk pastry and bakery, serta menghasilkan tamatan yang siap kerja mandiri di bidang Tata Boga."
+    },
+    {
+        "id":7,
+        "title":"Akuntansi",
+        "slug":"akuntansi",
+        "image":"/akuntansi.jpg",
+        "desc":"Mata pelajaran ini akan membahas dasar-dasar ilmu akuntansi, seperti konsep debit-kredit, neraca keuangan, atau menyajikan laporan keuangan. Materi dasar-dasar perbankan yang akan diajarkan antara lain adalah sejarah uang, sejarah bank, fungsi bank, serta sistem operasional lembaga perbankan."
+    },
+    {
+        "id":8,
+        "title":"Teknik dan Bisnis Sepeda Motor",
+        "slug":"tbsm",
+        "image":"/tbsm.jpg",
+        "desc":"Teknik dan Bisnis Sepeda Motor adalah kompetensi keahlian pada Bidang Studi Keahlian Teknologi dan Rekayasa Program Studi Keahlian Teknik Otomotif yang menekankan pada keterampilan pelayanan jasa mekanik kendaraan sepeda motor roda dua."
+    }
+]
