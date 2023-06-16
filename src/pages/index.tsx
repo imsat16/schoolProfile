@@ -26,6 +26,7 @@ export default function Home() {
         <title>SMK MVP ARS</title>
         <meta name="description" content="SMK MVP ARS Internasional adalah salah satu sekolah yang mempunyai makna Sekolah Menengah Kejuruan Multi Vocational Platform. Sekolah ini telah berdiri sejak tahun 2009 di bawah naungan Yayasan Graha Bina Pendidikan Internasional dan beralamat di Jalan Sekolah Internasional No. 1-6 Bandung. Sekolah ini memiliki program GO DIGITAL ! yang mana sekolah ini akan berkembang menjadi sekolah digital dengan mengembangkan slogan B.E.R.A.N.I walaupun Sekolah sudah memiliki Sistem informasi teknologi sebelumnya terbukti dengan adanya pembelajaran secara online. Selain itu sekolah ini juga menawarkan berbagai kompetensi keahlian atau jurusan bagi peserta didiknya." />
         <link href="/favicon.png" rel="icon" type="image/png"></link>
+        <meta property="og:image" content="Link preview image URL"></meta>
       </Head>
       <CR.Carousel showThumbs={false} autoPlay stopOnHover infiniteLoop interval={3000}>
         <div>

@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Allow: /article
+Disallow: /dashboard
+
+User-agent: Googlebot
+Disallow: /no-googlebot/
+
+User-agent: Bingbot
+Disallow: /no-bingbot/
+
+Sitemap: https://www.example.com/sitemap.xml
