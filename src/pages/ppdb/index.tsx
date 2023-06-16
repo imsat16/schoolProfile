@@ -1,9 +1,9 @@
-import Layouts from '../../layouts'
+import Layout from '@/layouts'
 import React from 'react'
 
 const PPDB = () => {
   return (
-    <Layouts>PPDB</Layouts>
+    <Layout>PPDB</Layout>
   )
 }
 

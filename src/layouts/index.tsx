@@ -6,15 +6,15 @@ interface Props {
   children : React.ReactNode
 }
 const Layout:React.FC<Props> = ({children}) => {
-  const [open, setOpen] = React.useState<boolean>()
   return (
     <main>
-      <Navbar open={open} sidebar>
+      <Navbar show sidebar>
         <Button href={'/'}>Home</Button>
         <Button href={'/article'}>Article</Button>
         <Button href={'/ppdb'}>Pendaftaran</Button>
+        <Button href={'/contact'}>Contact</Button>
       </Navbar>
-      <section className="">
+      <section className="absolute top-20 -z-10">
         {children}
       </section>
     </main>

@@ -1,8 +1,9 @@
+import Layout from '@/layouts'
 import React from 'react'
 
 const ArticlePages = () => {
   return (
-    <div>ArticlePages</div>
+    <Layout>ArticlePages</Layout>
   )
 }
 

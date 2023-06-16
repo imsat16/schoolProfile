@@ -3,13 +3,12 @@ import React, { useState } from 'react'
 import {HiOutlineMenuAlt2} from 'react-icons/hi'
 
 interface Props {
-    open?: boolean,
+    show?: boolean,
     sidebar?: boolean,
     children: React.ReactNode
 }
-const Navbar:React.FC<Props> = ({open, sidebar, children}) => {
-  const [op, setOp] = useState(open)
-  console.log(op)
+const Navbar:React.FC<Props> = ({show, sidebar, children}) => {
+  const [op, setOp] = useState(show)
   return (
     <nav className='sticky top-0 w-full p-4 truncate bg-white shadow-md'>
         <div className="container flex flex-col items-center justify-between mx-auto lg:flex-row">
