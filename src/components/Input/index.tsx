@@ -20,7 +20,7 @@ const Input: React.FC<InputProps> = ({
     const [characterCount, setCharacterCount] = React.useState(0);
 
     React.useEffect(() => {
-        setCharacterCount(value.length);
+        setCharacterCount(value?.length);
     }, [value]);
     
     return (
