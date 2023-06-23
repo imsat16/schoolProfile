@@ -8,7 +8,7 @@ const Contact = () => {
     <Layout>
       <div className='flex gap-10 p-20'>
         <div className="w-1/2 px-4">
-          <div className="bg-black text-white p-4 rounded-lg shadow-md">
+          <div className="bg-[#1E1E1E] text-white p-4 rounded-lg shadow-md">
               <p className="text-xl font-bold mb-2">ingin berbicara dengan kami Jangan ragu untuk menelepon, kirim email, Tweet kami atau cukup lengkapi formulir pertanyaan.</p>
               <ul className="list-disc list-inside">
                   <li className="mb-2">Nomor Kantor: <span className="font-bold">+1234567890</span></li>
