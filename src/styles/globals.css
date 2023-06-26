@@ -29,3 +29,38 @@ body {
   color: var(--foreground-rgb);
   background: var(--background)
 }
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.dnd > .wb {
+  @apply opacity-0 transition-all ease-in-out duration-500
+}
+
+.dnd:hover > .wb {
+  @apply opacity-100 transition-all ease-in-out duration-500
+}
+
+.dnd > .bg-black {
+  @apply opacity-25 transition-all ease-in-out duration-500
+}
+
+.dnd:hover > .bg-black{
+  @apply opacity-70 transition-all ease-in-out duration-500
+}
+
+.dnd > .text{
+  @apply opacity-0 transition-all ease-in-out duration-500
+}
+.dnd:hover > .text {
+  @apply opacity-100 cursor-pointer text-white text-xl font-bold transition-all
+}

@@ -1,7 +1,6 @@
-import Input from '@/components/Input';
+import Modal from '@/components/Modal';
 import Textarea from '@/components/Textarea';
 import DashboardLayout from '@/layouts/DashboardLayout'
-import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import * as React from 'react';
@@ -9,8 +8,9 @@ import * as Rsuite from 'rsuite'
 import {IoIosArrowBack} from 'react-icons/io'
 import { useRouter } from 'next/router';
 import { ARTICLE } from '@/pages/api';
+import Input from '@/components/Input';
 
-const CreateArticle = () => {
+const EditArticle = () => {
   const [title, setTitle] = React.useState('');
   const [penulis, setPenulis] = React.useState('');
   const [content, setContent] = React.useState('');
@@ -22,20 +22,13 @@ const CreateArticle = () => {
     e.preventDefault();
     console.log('Data artikel:', { title, content, selectedImage });
 
+    // uploadImage()
     ARTICLE.tambahArtikel({
       gambar: selectedImage,
       judul: title,
       isi_artikel: content,
       kategori_id: 1
     })
-
-    // const a = {
-    //   gambar: selectedImage,
-    //   judul: title,
-    //   isi_artikel: content,
-    //   kategori_id: 1
-    // }
-    // console.log(a)
   };
 
   const handleContentChange = (e: any) => {
@@ -74,6 +67,20 @@ const CreateArticle = () => {
       setSelectedImage(file);
     }
   };
+
+  // const uploadImage = async () => {
+  //   if (selectedImage) {
+  //     const formData = new FormData();
+  //     formData.append('image', selectedImage);
+
+  //     try {
+  //       const response = await api.post('/admin/artikel', formData);
+  //       console.log('Upload success!', response.data);
+  //     } catch (error) {
+  //       console.error('Upload failed!', error);
+  //     }
+  //   }
+  // };
 
   return (
     <DashboardLayout>
@@ -188,4 +195,4 @@ const CreateArticle = () => {
   )
 }
 
-export default CreateArticle
+export default EditArticle

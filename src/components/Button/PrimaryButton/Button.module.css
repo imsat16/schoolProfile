@@ -4,19 +4,19 @@
 }
 
 .outlined {
-  @apply font-semibold outline outline-[2px] outline-blue-600 hover:bg-blue-200 ;
+  @apply font-semibold outline outline-[2px] outline-blue-600 hover:bg-blue-200 !important;
 }
 
 .primary{
-  @apply font-semibold uppercase no-underline bg-blue-300;
+  @apply font-semibold uppercase no-underline bg-blue-300 !important;
 }
 
 .primary:disabled{
-  @apply font-semibold uppercase no-underline bg-blue-300/70;
+  @apply font-semibold uppercase no-underline bg-blue-300/70 !important;
 }
 
 .alert{
-  @apply font-semibold uppercase no-underline bg-red-300;
+  @apply font-semibold uppercase no-underline bg-red-300 !important;
 }
 
 .alert:disabled{

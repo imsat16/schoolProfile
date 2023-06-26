@@ -1,7 +1,9 @@
 import React from 'react'
 import { InputProps } from './InputProps'
+import * as Rsuite from 'rsuite'
+import moment from 'moment';
 
-const Input: React.FC<InputProps> = ({
+const DatePicker: React.FC<InputProps> = ({
     label,
     type,
     placeholder,
@@ -44,7 +46,15 @@ const Input: React.FC<InputProps> = ({
             <label className="label">
                 <span className="label-text">{label}</span>
             </label>
-            <input
+            <Rsuite.DatePicker 
+                format="dd MMMM yyyy" 
+                className='h-full mt-2' 
+                placeholder={placeholder}
+                value={value}
+                placement='auto'
+            />
+
+            {/* <input
                 id={id}
                 minLength={minLength}
                 maxLength={maxLength}
@@ -57,7 +67,7 @@ const Input: React.FC<InputProps> = ({
                 disabled={disabled}
                 onKeyDown={numberInputKeyDown}
                 className={`w-full min-w-xs border input border-gray-300 focus:outline-none ${className}`}
-            />
+            /> */}
             <label className="label">
                 <span className="text-red-500 label-text-alt">{message}</span>
             </label>
@@ -69,4 +79,4 @@ const Input: React.FC<InputProps> = ({
     )
 }
 
-export default Input
+export default DatePicker

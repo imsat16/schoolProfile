@@ -1,7 +1,35 @@
+import { AUTH } from '@/pages/api';
 import Image from 'next/image'
+import { setCookie } from 'nookies';
 import React from 'react'
 
 const Login = () => {
+    const [email, setEmail] = React.useState("")
+    const [password, setPassword] = React.useState("")
+    const handleLogin = async (e: any) => {
+        e.preventDefault();
+        AUTH.login({
+            email: email,
+            password: password
+        }).then(
+            res => {
+                console.log(res.data)
+                // setMsg(res.data.name)
+                console.log(res.data)
+                // setErrMsg("")
+                setCookie(null, 'token', res.data.token,{
+                    maxAge: 24 * 60 * 60,
+                    path: '/',
+                })
+                // router.reload()
+            }
+        ).catch(
+            err=>{
+                // setErrMsg(err.message)
+                console.log(err.message)
+            }
+        )
+    }
     return (
         <main className="flex items-center justify-center min-h-screen bg-gray-50">
             <div className="flex flex-col items-center w-full px-4 md:w-1/2">
@@ -9,7 +37,10 @@ const Login = () => {
                     <h2 className="font-bold text-2xl text-[#002D74]">Login</h2>
                     <p className="text-xs mt-4 text-[#002D74]">If you are already a member, easily log in</p>
                 </div>
-                <form className="flex flex-col justify-center w-full gap-4 lg:w-1/2">
+                <form 
+                    onSubmit={handleLogin} 
+                    className="flex flex-col justify-center w-full gap-4 lg:w-1/2"
+                >
                     <input className="p-2 mt-8 border rounded-xl" type="email" name="email" placeholder="Email" />
                     <div className="relative">
                         <input className="w-full p-2 border rounded-xl" type="password" name="password" placeholder="Password" />
@@ -18,7 +49,7 @@ const Login = () => {
                             <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
                         </svg>
                     </div>
-                    <button className="bg-[#002D74] rounded-xl text-white py-2 hover:scale-105 duration-300">Login</button>
+                    <button type='submit' className="bg-[#002D74] rounded-xl text-white py-2 hover:scale-105 duration-300">Login</button>
                 </form>
             </div>
             <div className="relative hidden w-1/2 min-h-screen lg:block">

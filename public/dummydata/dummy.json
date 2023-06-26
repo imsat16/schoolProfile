@@ -1,6 +1,7 @@
 [
     {
         "id": 1,
+        "slug":"ada-anak",
         "author":"Imam",
         "image":"https://www.smkmvp.sch.id/public/bkk-pictures/FDOZF65a3zkt7QUC0BogGXIYbONJhirvQaLKO5Qf.jpg",
         "judul": "ada anak bertanya pada anaknya",
@@ -8,6 +9,7 @@
     },
     {
         "id": 2,
+        "slug":"ada-bapak",
         "author":"Satrio",
         "image":"https://www.smkmvp.sch.id/public/elearning-pictures/VH4w4fSBDo0fSSAhvn9C5fyUUjwLhdKkPvgmssbm.jpg",
         "judul": "ada bapa menjawab pada bapaknya",

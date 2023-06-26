@@ -7,6 +7,7 @@ interface Props {
     className?: string,
     disabled ?: boolean,
     onClick ?: any,
+    active?:boolean
     variants ?: 'primary'|'alert',
 }
 const Button:React.FC<Props> = ({
@@ -15,15 +16,16 @@ const Button:React.FC<Props> = ({
     className,
     disabled = false,
     onClick,
+    active,
     variants,
 }) => {
   return (
     <>
       {
         href ? 
-        <Link href={href} className="text-black hover:no-underline">
-          <button className={`${className ? className :`${styles.btn}`} rounded-lg flex items-center gap-2 p-3 w-full font-medium `}>
-            {children}
+        <Link href={href} className={`text-black hover:no-underline`}>
+          <button className={`${className ? className :`${styles.btn}`} ${active?"text-blue-600":"text-gray-500"} hover:text-blue-600 rounded-lg flex items-center gap-2 p-3 w-full`}>
+            <p className="font-bold">{children}</p>
           </button>
         </Link>
         :
