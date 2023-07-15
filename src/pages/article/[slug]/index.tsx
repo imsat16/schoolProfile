@@ -25,6 +25,7 @@ const DetailArticle = ({ data, infoData }: InferGetServerSidePropsType<typeof ge
   const info = infoData.data
   const prof = React.useRef(info.profile)
   const school = prof.current
+  
 
   React.useEffect(() => {
     const fetchData = async () => {
@@ -88,6 +89,7 @@ const DetailArticle = ({ data, infoData }: InferGetServerSidePropsType<typeof ge
       <Head>
         <title>{article.judul}</title>
         <meta name="description" content={article.isi_artikel} />
+        <link href={school.logo} rel="icon" type="image/png"></link>
       </Head>
       <div className=" bg-[#f2f2f2] md:py-8 flex justify-center items-center ">
         <div className="container flex flex-col justify-center min-h-screen gap-4 lg:flex-row">

@@ -1,4 +1,4 @@
-import { api } from "./api";
+import { api, token } from "./api";
 
 type infoSekolah = {
     nama_sekolah : string
@@ -12,7 +12,7 @@ export const editArtikel = async (edit: infoSekolah) => {
         data: edit,
         headers: {
         'Content-Type': 'multipart/form-data',
-          Authorization: `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2ODcyMjUzNTUsIm5iZiI6MTY4NzIyNTM1NSwianRpIjoiY2RiOTAxNWQtNmRjMy00ZDA1LWE2NTktNWRhZjVkZDgxYTM2IiwiZXhwIjoxNjg3ODMwMTU1LCJpZGVudGl0eSI6IntcImlkXCI6IDEsIFwidW5hbWVcIjogXCJrZWx2aW5kbTcxMDJAZ21haWwuY29tXCIsIFwidGltZVwiOiAxNjg3MjI1MzU1Ljc4NTc2NH0iLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.e_bZmiKjzJ_chAJFQZ1Dp2g_Fg3T8qg7b425QvyZWa8`,
+          Authorization: `Bearer ${token}`,
         },
       });
       return res.data;

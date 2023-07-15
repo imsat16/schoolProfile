@@ -28,7 +28,8 @@ const ArticlePages = ({ data, infoData }: InferGetServerSidePropsType<typeof get
       <Head>
         <title>{school.nama} | Artikel</title>
         <meta name="description" content={school.deskripsi} />
-        <link href="/favicon.png" rel="icon" type={school.logo}></link>
+        {/* <link href="/favicon.png" rel="icon" type={school.logo}></link> */}
+        <link href={school.logo} rel="icon" type="image/png"></link>
         <meta property="og:image" content={school.logo}></meta>
         <meta property="og:type" content="website" />
         <meta property="og:description" content={school.deskripsi} />

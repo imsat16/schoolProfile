@@ -16,7 +16,6 @@ const DetailJurusan = ({data, infoData}: InferGetServerSidePropsType<typeof getS
   const prof = React.useRef(info.profile)
   const school = prof.current
 
-  console.log(school)
   return (
     <Layout logo={school.logo}>
       <Head>
@@ -34,10 +33,20 @@ const DetailJurusan = ({data, infoData}: InferGetServerSidePropsType<typeof getS
             <h1 className='text-2xl md:text-4xl lg:text-6xl line-clamp-2 lg:line-clamp-none'>{dt.nama_jurusan}</h1>
           </div>
         </div>
-        <div className="p-10">
-          <div>
-            <h2>{dt.nama_jurusan}</h2>
-            <p className='md:text-lg'>{dt.deskripsi}</p>
+        <div className="gap-8 p-10 md:grid md:grid-cols-3">
+          <div className="w-full ">
+            <div className="aspect-h-2 aspect-w-2">
+              <img 
+                src={dt.foto_kaprodi} 
+                alt="" 
+                className='object-cover'
+              />
+            </div>
+          </div>
+          <div className='col-span-2'>
+            <h2>{dt.kaprodi}</h2>
+            <span className='text-lg font-bold text-black/40'>Kepala Prodi {dt.nama_jurusan}</span>
+            <p className='md:text-lg'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto molestiae voluptatem vero eveniet ipsa nostrum praesentium, in omnis, quasi necessitatibus, id aspernatur provident. Necessitatibus at eaque soluta, incidunt quo vitae libero nemo quos dolores labore. Fugiat reiciendis quod quo molestiae, et molestias, similique distinctio expedita ratione sit quidem quos autem!</p>
           </div>
         </div>
       </main>

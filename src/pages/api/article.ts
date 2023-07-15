@@ -1,4 +1,4 @@
-import { api } from "./api"
+import { api, token } from "./api"
 
 type addArticle = {
     judul : string
@@ -7,6 +7,22 @@ type addArticle = {
     gambar: FormData | null
 }
 
+export const getArtikel = async () => {
+  try {
+    const res = await api.get(
+      `/admin/artikel`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    return res.data;
+  } catch (error: any) {
+    throw new Error(error.message);
+  }
+};
+
 export const tambahArtikel = async (artikel:addArticle) => {
     try {
         const res = await api.post(`/admin/artikel`, artikel,
@@ -14,16 +30,14 @@ export const tambahArtikel = async (artikel:addArticle) => {
             data: artikel,
             headers:{
                 'Content-Type': 'multipart/form-data',
-                Authorization: `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2ODcyMjUzNTUsIm5iZiI6MTY4NzIyNTM1NSwianRpIjoiY2RiOTAxNWQtNmRjMy00ZDA1LWE2NTktNWRhZjVkZDgxYTM2IiwiZXhwIjoxNjg3ODMwMTU1LCJpZGVudGl0eSI6IntcImlkXCI6IDEsIFwidW5hbWVcIjogXCJrZWx2aW5kbTcxMDJAZ21haWwuY29tXCIsIFwidGltZVwiOiAxNjg3MjI1MzU1Ljc4NTc2NH0iLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.e_bZmiKjzJ_chAJFQZ1Dp2g_Fg3T8qg7b425QvyZWa8`
+                Authorization: `Bearer ${token}`
             },
-            // headers:{
-            //     Authorization: `Bearer ${token}`
-            // },
         }
         );
         return res.data
     } catch (error:any) {
-        throw new Error(error.message);
+      // console.log("ini", error.response.data.message)
+        throw new Error(error.response.data.message);
     }
 }
 
@@ -41,7 +55,7 @@ export const editArtikel = async (edit: EA) => {
         data: edit,
         headers: {
         'Content-Type': 'multipart/form-data',
-          Authorization: `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2ODcyMjUzNTUsIm5iZiI6MTY4NzIyNTM1NSwianRpIjoiY2RiOTAxNWQtNmRjMy00ZDA1LWE2NTktNWRhZjVkZDgxYTM2IiwiZXhwIjoxNjg3ODMwMTU1LCJpZGVudGl0eSI6IntcImlkXCI6IDEsIFwidW5hbWVcIjogXCJrZWx2aW5kbTcxMDJAZ21haWwuY29tXCIsIFwidGltZVwiOiAxNjg3MjI1MzU1Ljc4NTc2NH0iLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.e_bZmiKjzJ_chAJFQZ1Dp2g_Fg3T8qg7b425QvyZWa8`,
+          Authorization: `Bearer ${token}`,
         },
       });
       return res.data;
@@ -49,3 +63,17 @@ export const editArtikel = async (edit: EA) => {
       throw new Error(error.response.data.message);
     }
   };
+
+  export const deleteArtikel = async (id: any) => {
+    try {
+        const response = await api.delete(`/admin/artikel?id=${id}`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }); 
+        return response.data;
+    } catch (error:any) {
+        throw new Error(error.message);
+    }
+  };
+

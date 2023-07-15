@@ -1,13 +1,13 @@
 import DashboardLayout from '@/layouts/DashboardLayout'
-import TablePendaftar from '@/view/ppdb/table'
 import React from 'react'
 
-const PPDBDashboard = () => {
+const ProfileDashboard = () => {
+  
   return (
     <DashboardLayout>
-      <TablePendaftar/>
+      profile
     </DashboardLayout>
   )
 }
 
-export default PPDBDashboard
+export default ProfileDashboard

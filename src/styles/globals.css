@@ -26,7 +26,7 @@ body{
 } */
 
 body {
-  color: var(--foreground-rgb);
+  color: var(--text);
   background: var(--background)
 }
 
@@ -59,8 +59,33 @@ input[type=number] {
 }
 
 .dnd > .text{
-  @apply opacity-0 transition-all ease-in-out duration-500
+  @apply opacity-0 transition-all ease-in-out duration-500 text-center text-xs
 }
+
 .dnd:hover > .text {
-  @apply opacity-100 cursor-pointer text-white text-xl font-bold transition-all
+  @apply opacity-100 cursor-pointer text-white lg:text-lg font-bold transition-all
+}
+
+.dnd:hover > .text > span {
+  @apply opacity-100 cursor-pointer text-white lg:text-xs text-center font-bold transition-all
+}
+
+.selected-banner {
+  @apply absolute top-0 opacity-0 items-center w-full h-full
+}
+
+.selected-banner:hover {
+  @apply flex bg-black/30 opacity-100 justify-around transition duration-300 ease-in-out
+}
+
+.selected-banner:hover > div {
+  @apply text-white font-semibold text-2xl transition duration-300 ease-in-out
+}
+
+.selected-banner:hover > div:hover:first-child {
+  @apply text-white text-3xl cursor-pointer transition duration-300 ease-in-out
+}
+
+.selected-banner:hover > div:hover:last-child {
+  @apply text-white text-3xl cursor-pointer transition duration-300 ease-in-out
 }

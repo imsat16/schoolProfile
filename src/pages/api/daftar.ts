@@ -1,4 +1,4 @@
-import { api } from "./api"
+import { api, token } from "./api"
 
 export type daftar = {
     id_jurusan: number
@@ -20,7 +20,25 @@ export type daftar = {
     instansi_wali: string //
     penghasilan_wali: string //
     alamat_wali: string //
+    status_tinggal: string //,
+
 }
+
+export const getRegistered = async (id:number) => {
+    try {
+      const res = await api.get(
+        `/admin/ppdb?id=${id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      return res.data;
+    } catch (error: any) {
+      throw new Error(error.message);
+    }
+  };
 
 export const tambah = async (pendaftar:daftar) => {
     try {

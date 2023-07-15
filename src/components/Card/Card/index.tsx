@@ -8,13 +8,14 @@ interface Props {
   link?: string
   image: string
   rtl?: boolean
+  descClamp? : 'line-clamp-1'| 'line-clamp-2'|'line-clamp-3'|'line-clamp-4'|'line-clamp-5'
 }
-const Card:React.FC<Props> = ({title, desc, link, image, rtl = false}) => {
+const Card:React.FC<Props> = ({title, desc, descClamp, link, image, rtl = false}) => {
   return (
     <div dir={rtl?"rtl":"ltr"} className="flex flex-col gap-6 px-6 md:px-20 lg:flex-row">
       <div dir={rtl?"ltr":"lg:rtl"} className="w-full">
-      <h2 className="">{title}</h2>
-      <p className='text-justify'>
+      <h2>{title}</h2>
+      <p className={`${descClamp} text-justify`}>
         {desc}
       </p>
       <div className="float-right pt-4">

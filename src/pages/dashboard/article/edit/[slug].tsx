@@ -1,5 +1,4 @@
 import Input from '@/components/Input';
-import Modal from '@/components/Modal';
 import Textarea from '@/components/Textarea';
 import DashboardLayout from '@/layouts/DashboardLayout'
 import Head from 'next/head';

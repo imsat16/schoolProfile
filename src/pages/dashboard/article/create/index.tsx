@@ -16,6 +16,8 @@ const CreateArticle = () => {
   const [content, setContent] = React.useState('');
   const [selectedImage, setSelectedImage] = React.useState(null)
   const [previewImage, setPreviewImage] = React.useState("")
+  const [msg, setMsg] = React.useState('');
+  const [msgColor, setMsgColor] = React.useState('green');
   const router = useRouter()
 
   const handleSubmit = async (e: any) => {
@@ -27,7 +29,26 @@ const CreateArticle = () => {
       judul: title,
       isi_artikel: content,
       kategori_id: 1
-    })
+    }).then(
+      res => {
+        setMsg(res.message)
+        setMsgColor("green")
+        setTimeout(() => {
+          router.replace('/dashboard/article')
+        }, 3000);
+      }
+    ).catch(
+      err => {
+        console.error(err)
+        setMsg(err.message)
+        setMsgColor("red")
+        setTimeout(() => {
+          setMsg("")
+        }, 3000);
+      }
+    )
+
+    console.log({msgColor, msg})
 
     // const a = {
     //   gambar: selectedImage,
@@ -80,6 +101,14 @@ const CreateArticle = () => {
       <Head>
         <title>Article</title>
       </Head>
+      {msg && 
+        <div className={`absolute top-0 left-0 z-10 flex items-center justify-center w-full min-h-screen `}>
+          <div className={`bg-${msgColor}-400 p-4 px-6 font-bold text-xl text-white rounded-lg`}>
+          {/* <div className={`bg-red-500 p-4 px-6 font-bold text-xl text-white`}> */}
+            {msg}
+          </div>
+        </div>
+      }
       <div className=''>
         <Rsuite.ButtonToolbar>
           <div className="flex items-center justify-between w-full">
@@ -97,9 +126,9 @@ const CreateArticle = () => {
                 {previewImage ? <Image fill className='object-cover rounded-md' src={previewImage} alt="Gambar" />:<div className='flex items-center justify-center bg-gray-300 rounded-md '>"Gambar belum tersedia"</div>}
               </div>
               <h2 className='text-3xl font-semibold md:font-bold'>{title}</h2>
-              {penulis?
+              {/* {penulis?
                 <p>Diposting oleh {penulis}, 28 Mar 2023</p>:""
-              }
+              } */}
               <p className='text-justify'>
                 {content ? content.split('\n').map((paragraph, index) => (
                   <span key={index}>
@@ -156,7 +185,7 @@ const CreateArticle = () => {
           </div> */}
           <div className="w-full">
             <form onSubmit={handleSubmit}>
-              <input type="file" onChange={handleImageUpload} />
+              <input required type="file" onChange={handleImageUpload} />
               {/* <Input
                 type='file'
                 onChange={handleImageUpload}
@@ -169,11 +198,11 @@ const CreateArticle = () => {
                 minLength={12}
                 maxLength={200}
               />
-              <Input
+              {/* <Input
                 label='Penulis'
                 value={penulis}
                 onChange={(e) => setPenulis(e.target.value)}
-              />
+              /> */}
               <Textarea
                 label='Konten Artikel:'
                 onChange={handleContentChange}

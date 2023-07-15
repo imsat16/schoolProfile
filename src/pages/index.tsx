@@ -8,6 +8,7 @@ import { InferGetServerSidePropsType } from 'next';
 
 const Home = ({ data }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   const school = data.data
+  console.log(school)
   const [showAll, setShowAll] = React.useState(false);
   // console.log(school)
   const sp = React.useRef(school.profile)
@@ -20,19 +21,20 @@ const Home = ({ data }: InferGetServerSidePropsType<typeof getServerSideProps>) 
   const banner = bnr.current
 
   const limitedJurusan = showAll ? jurusan : jurusan.slice(0, 3);
+  console.log(profile.logo)
 
   return (
     <Layout logo={profile.logo} vocation={jurusan}>
       <Head>
         <title>{profile.nama}</title>
         <meta name="description" content={profile.deskripsi} />
-        <link href="/favicon.png" rel="icon" type={profile.logo}></link>
+        <link href={profile.logo} rel="icon" type="image/png"></link>
         <meta property="og:image" content={profile.logo}></meta>
         <meta property="og:type" content="website" />
         <meta property="og:description" content={profile.deskripsi} />
       </Head>
       <CR.Carousel showThumbs={false} autoPlay stopOnHover infiniteLoop interval={3000}>
-        {banner.map((_: any, idx: any) => {
+        {banner?.map((_: any, idx: any) => {
           return (
             <div key={idx}>
               <div className="relative aspect-w-3 aspect-h-4 lg:aspect-w-16 lg:aspect-h-7">
@@ -83,10 +85,10 @@ const Home = ({ data }: InferGetServerSidePropsType<typeof getServerSideProps>) 
             </div>
           </div>
         </div>
-        {limitedJurusan.map((_: any, index: any) => {
-          const rtl = index % 2 === 0 ? true : false;
+        {limitedJurusan?.map((_: any, idx: any) => {
+          const rtl = idx % 2 === 0 ? true : false;
           return (
-            <div key={index}>
+            <div key={idx}>
               <Card
                 rtl={rtl}
                 title={_.nama_jurusan}

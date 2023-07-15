@@ -6,10 +6,16 @@ interface Login {
 }
 
 interface addUser {
-    nama : string
+    nama: string
+    email: string
     password: string
-    username: string
-    role: number
+}
+
+interface editUser {
+    id : number
+    nama: string
+    email: string
+    password: string
 }
 
 export const login = async (e: Login) => {
@@ -17,7 +23,7 @@ export const login = async (e: Login) => {
         const res = await api.post(`/user/login`, e, {
             data: e,
             headers:{
-                'Content-Type': 'application/json',
+                'Content-Type': 'Application/JSON',
                 Authorization: `Bearer ${token}`
             },
         });
@@ -43,22 +49,24 @@ export const tambahUser = async (userData:addUser) => {
     }
 }
 
-export const userList = async () => {
+export const editUser = async (userData:editUser) => {
     try {
-        const res = await api.get(`/account/users`,{
+        const res = await api.put(`/user`, userData, {
+            data: userData,
             headers:{
                 Authorization: `Bearer ${token}`
-            }
-        })
+            },
+        });
         return res.data
     } catch (error:any) {
-        throw new Error(error.message)
+        console.log(error.response.data.message)
+        throw new Error(error.response.data.message);
     }
 }
 
-export const me = async () => {
+export const userList = async () => {
     try {
-        const res = await api.get(`/account/me`,{
+        const res = await api.get(`/user`,{
             headers:{
                 Authorization: `Bearer ${token}`
             }

@@ -10,12 +10,17 @@ const Jurusan = ({ data, infoData }: InferGetServerSidePropsType<typeof getServe
   const info = infoData.data
   const prof = React.useRef(info.profile)
   const school = prof.current
+
   return (
-    <Layout logo={school.logo}>
+    <Layout 
+      logo={school.logo}
+      vocation={jurusan}
+    >
       <Head>
         <title>{school.nama} | Jurusan</title>
         <meta name="description" content={school.deskripsi} />
-        <link href="/favicon.png" rel="icon" type={school.logo}></link>
+        {/* <link href="/favicon.png" rel="icon" type={school.logo}></link> */}
+        <link href={school.logo} rel="icon" type="image/png"></link>
         <meta property="og:image" content={school.logo}></meta>
         <meta property="og:type" content="website" />
         <meta property="og:description" content={school.deskripsi} />
@@ -31,6 +36,7 @@ const Jurusan = ({ data, infoData }: InferGetServerSidePropsType<typeof getServe
               desc={_.deskripsi}
               image={_.logo}
               link={`\jurusan/${_.slug}`}
+              descClamp='line-clamp-5'
             />
           </div>
         );

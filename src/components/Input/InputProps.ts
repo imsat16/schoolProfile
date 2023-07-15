@@ -3,7 +3,7 @@ import { ChangeEvent } from "react"
 export type InputProps = {
     id?: string
     label?: string
-    type?: 'text' | 'password' | 'number' | 'date' | 'file'
+    type?: 'text' | 'password' | 'number' | 'date' | 'file' | 'email'
     placeholder?: string
     onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
     value?: any | string

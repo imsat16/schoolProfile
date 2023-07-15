@@ -8,6 +8,7 @@ import { InferGetServerSidePropsType } from "next";
 import React from "react";
 import * as Rsuite from "rsuite";
 import { PPDB } from "../api";
+import Head from "next/head";
 
 const PPDBPage = ({ data, infoData }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
 
@@ -22,6 +23,7 @@ const PPDBPage = ({ data, infoData }: InferGetServerSidePropsType<typeof getServ
   const [namaPendaftar, setNamaPendaftar] = React.useState<string>('');
   const [nisn, setNisn] = React.useState<string>('');
   const [teleponPendaftar, setTeleponPendaftar] = React.useState<string>('');
+  const [sTinggalPribadi, setSTinggalPribadi] = React.useState<string>('');
   const [tanggalLahir, setTanggalLahir]:any = React.useState<number>();
   const [tempatLahir, setTempatLahir] = React.useState<string>('');
   const [jenisKelamin, setJenisKelamin] = React.useState<string>('');
@@ -42,12 +44,12 @@ const PPDBPage = ({ data, infoData }: InferGetServerSidePropsType<typeof getServ
   const lj: any = data.data
   // console.log(listJur)
 
-  const gndr = ["Laki - laki", "Perempuan"].map((item) => ({
+  const gndr = ["L", "P"].map((item) => ({
     label: item,
     value: item,
   }));
 
-  const gldr = ["A", "B", "AB", "0", "Tidak Tahu"].map((item) => ({
+  const gldr = ["A", "B", "AB", "0", "-"].map((item) => ({
     label: item,
     value: item,
   }));
@@ -93,6 +95,7 @@ const PPDBPage = ({ data, infoData }: InferGetServerSidePropsType<typeof getServ
       tempat_lahir: tempatLahir,
       jenis_kelamin: jenisKelamin,
       gol_darah: golDarah,
+      status_tinggal: sTinggalPribadi,
       agama: agama,
       asal_sekolah: asalSekolah,
       alamat_sekolah: alamatSekolah,
@@ -118,6 +121,7 @@ const PPDBPage = ({ data, infoData }: InferGetServerSidePropsType<typeof getServ
       agama: agama,
       asal_sekolah: asalSekolah,
       alamat_sekolah: alamatSekolah,
+      status_tinggal: sTinggalPribadi,
       tahun_lulus: tahunLulus,
       nama_wali: namaWali,
       telepon_wali: teleponWali,
@@ -147,6 +151,15 @@ const PPDBPage = ({ data, infoData }: InferGetServerSidePropsType<typeof getServ
   // };
   return (
     <Layout logo={school.logo} vocation={jurusan}>
+      <Head>
+        <title>{school.nama} | Pendaftaran Online</title>
+        <meta name="description" content={school.deskripsi} />
+        {/* <link href="/favicon.png" rel="icon" type={school.logo}></link> */}
+        <link href={school.logo} rel="icon" type="image/png"></link>
+        <meta property="og:image" content={school.logo}></meta>
+        <meta property="og:type" content="website" />
+        <meta property="og:description" content={school.deskripsi} />
+      </Head>
       <div className="p-4 py-10 bg-gray-300 md:p-10 lg:p-20">
         <form 
           className="grid gap-5 p-4 bg-white rounded-lg md:p-10 lg:p-20"
@@ -241,6 +254,12 @@ const PPDBPage = ({ data, infoData }: InferGetServerSidePropsType<typeof getServ
                 type="number" 
                 value={teleponPendaftar} 
                 onChange={(e) => setTeleponPendaftar(e.target.value)} 
+              />
+              <Input 
+                label="Status Tinggal" 
+                type="text" 
+                value={sTinggalPribadi} 
+                onChange={(e) => setSTinggalPribadi(e.target.value)} 
               />
             </div>
           </div>
